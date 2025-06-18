@@ -81,7 +81,7 @@
 
         <div id="hunt-content">
             <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 mb-2">Progress: <span id="progress-text">0/11</span></h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Progress: <span id="progress-text">0/9</span></h2>
                 <div class="progress-bar">
                     <div id="progress-fill" class="progress-fill"></div>
                 </div>
@@ -115,100 +115,84 @@
     <script>
         // Define all possible locations with their details
         const allLocations = {
-            "Pasquerilla East Hall": {
-                clue: "Your Notre Dame adventure begins where the 'PE' spirit shines bright, a vibrant dorm, bathed in morning light. Find its main entrance, and gather your team, let the exploration draw near!",
-                task: "Take a group selfie in front of the main entrance sign of Pasquerilla East Hall, showing your excitement! Upload it to the MWF-2025 whatsap group.",
-                historyText: "Pasquerilla East Hall, often called 'PE', is one of Notre Dame's undergraduate women's dorms. It was built in 1981 and is known for its strong community and vibrant spirit. Each dorm at Notre Dame has its own unique traditions and identity.",
-                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=PE", // REPLACE WITH ACTUAL IMAGE
+            "Jenkins Nanovic Hall (Start)": { // Renamed for clarity in route
+                clue: "Your Notre Dame adventure begins at a modern building focused on global connections. Find its main entrance, and gather your team, let the exploration draw near!",
+                task: "Take a group selfie in front of the main entrance sign of Jenkins Nanovic Hall, showing your excitement! Upload it to the MWF-2025 whatsap group.",
+                historyText: "Opened in 2017, Jenkins Nanovic Hall is a state-of-the-art building housing several departments and institutes focused on global affairs, international studies, and the social sciences. It represents Notre Dame's commitment to addressing complex global challenges.",
+                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Jenkins+Nanovic+Hall", // REPLACE WITH ACTUAL IMAGE
                 map: "https://www.google.com/maps/dir//Pasquerilla+East+Hall+Sami,+500+Pasquerilla+East+Hall,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d2992b29f9fb:0xe33061ab6a3b23ba!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
             },
-            "North Dining Hall": {
-                clue: "From your current spot, head towards the north, where hunger is met, and appetites burst. A grand dining hall, with options so vast, for breakfast or lunch, a memory to last.",
-                task: "Take a photo of your team striking a 'hungry' pose outside the North Dining Hall. Upload it to the MWF-2025 whatsap group.",
-                historyText: "North Dining Hall, built in 1957, was the final building constructed on North Quad and serves as the more modern counterpart to Notre Dame’s older, Gothic-style South Dining Hall (which is much closer to McGlinn, but is unfortunately closed for the summer!). It contains the original wood relief 'The Last Supper', carved by famed sculptor Ivan Mestrovic, on display in the north dining room. It is a meaningful Catholic artwork representing a religious occasion which precedes Easter Sunday, the Catholic Church’s most important holiday.",
-                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=NDH", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//North+Dining+Hall,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d298aa38e83d:0x91f2988a94d13a96!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
-            },
             "Coleman-Morse Center": {
-                clue: "Now venture east, past the fields of green, to a vibrant hub, where student life's keen. A center for faith, learning, and fun, the 'CM' invites all, till the day is done.",
+                clue: "From Jenkins Nanovic, venture towards a vibrant hub where student life thrives. A center for faith, learning, and fun, the 'CM' invites all, till the day is done.",
                 task: "Find the main entrance of the Coleman-Morse Center and take a photo of your team showcasing a 'student life' activity (e.g., pretending to study, chat, or grab coffee). Upload it to the MWF-2025 whatsap group.",
                 historyText: "The Coleman-Morse Center is a vital hub for student life and faith formation on campus. It houses Campus Ministry, Campus Recreation, and various student services, providing a welcoming space for community, worship, and engagement.",
                 historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Coleman-Morse", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Coleman-Morse+Center,+110+Corby+Dr,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d2a0b844260f:0xb181b327f281ec00!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+                map: "https://www.google.com/maps/dir//North+Dining+Hall,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d298aa38e83d:0x91f2988a94d13a96!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
             },
             "Grotto of Our Lady of Lourdes": {
-                clue: "From the center's lively hum, seek a sacred place, where candles flicker, and prayers find grace. A peaceful sanctuary, by the lake's soft gleam, a replica of Lourdes, a spiritual dream.",
+                clue: "From the Coleman-Morse Center, seek a sacred place where candles flicker and prayers find grace. A peaceful sanctuary, by the lake's soft gleam, a replica of Lourdes, a spiritual dream.",
                 task: "Take a quiet, respectful photo of your team near the Grotto, perhaps with a lit candle (if safe and permitted) or simply in reflection. Upload it to the MWF-2025 whatsap group.",
                 historyText: "The Grotto of Our Lady of Lourdes is a beloved spiritual landmark on campus, a replica of the original Grotto in Lourdes, France. It's a place of quiet reflection and prayer for students, faculty, and visitors alike, especially popular for candle lighting.",
                 historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Grotto", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Grotto+of+Our+Lady+of+Lourdes,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d2a1388cc33b:0xcab327e155569f64!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+                map: "https://www.google.com/maps/dir//Coleman-Morse+Center,+110+Corby+Dr,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d2a0b844260f:0xb181b327f281ec00!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
             },
             "Basilica of the Sacred Heart": {
                 clue: "Ascend from the Grotto, towards spires so high, a magnificent church, reaching for the sky. With stained glass stories and grandeur profound, a spiritual heart, on hallowed ground.",
                 task: "Capture a team photo outside the Basilica, showcasing its impressive architecture. Upload it to the MWF-2025 whatsap group.",
                 historyText: "The Basilica of the Sacred Heart is the spiritual heart of Notre Dame. Consecrated in 1888, its stunning Gothic Revival architecture, intricate stained glass, and beautiful murals make it a breathtaking place of worship and a campus icon.",
                 historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Basilica", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Basilica+of+the+Sacred+Heart,+101+Basilica+Dr,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816cd4762093aab:0x19056d411e749a72!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+                map: "https://www.google.com/maps/dir//Grotto+of+Our+Lady+of+Lourdes,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d2a1388cc33b:0xcab327e155569f64!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
             },
             "Main Building (Golden Dome)": {
-                clue: "Just a few steps away, a golden crown gleams, atop the university's highest dreams. A symbol of knowledge, with Mary so bright, guiding our path, with her radiant light.",
+                clue: "Just a few steps away from the Basilica, a golden crown gleams, atop the university's highest dreams. A symbol of knowledge, with Mary so bright, guiding our path, with her radiant light.",
                 task: "Take a creative group photo with the Golden Dome clearly visible in the background. Try to make it look like you're part of the iconic scene! Upload it to the MWF-2025 whatsap group.",
                 historyText: "The Main Building of the University of Notre Dame is, without a doubt, the best known symbol of the University. It is famous for its Golden Dome, topped by a statue of the Blessed Virgin Mary (an important figure in Catholicism). A famous Notre Dame tradition is that students do not climb the steps of the Main Building until they have graduated, instead they enter through the doors below the stairs. Enter the Main Building and explore the main level. Make sure to see the underside of the dome, the paintings, and the other artwork. Get a photo of your team underneath the dome or in front of the building.",
                 historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Golden+Dome", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir/41.6960492,-86.2377641/Main+Building,+Notre+Dame,+IN+46556/@41.6996301,-86.2436558,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8816d2a174b341c1:0xa08d1a8f76f77ddf!2m2!1d-86.2390726!2d41.7030267?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D" // REPLACE WITH ACTUAL LINK
-            },
-            "Our Lady of the Lake World Peace Plaza": {
-                clue: "Near the serene lake, a peaceful expanse, where contemplation and beauty enhance. Look for a monument, with symbols of hope, a global message, on this campus slope.",
-                task: "Take a thoughtful group photo at the World Peace Plaza, perhaps touching the globe or reflecting by the lake. Upload it to the MWF-2025 whatsap group.",
-                historyText: "The Our Lady of the Lake World Peace Plaza is a beautiful and reflective space near St. Mary's Lake. It features a large globe sculpture and serves as a symbol of Notre Dame's commitment to peace and global understanding.",
-                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Plaza", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Our+Lady+of+the+Lakes+World+Peace+Plaza,+Holy+Cross+Dr,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d3a49c1e9851:0xc756b895d3cc89f2!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
-            },
-            "Hesburgh Library ('Touchdown Jesus')": {
-                clue: "Beyond the plaza, a colossal facade, with a mosaic so grand, a spiritual parade. 'Touchdown Jesus' watches, with arms open wide, a beacon of wisdom, where knowledge resides.",
-                task: "Recreate the 'Touchdown Jesus' pose with your team in front of the Hesburgh Library mural. Make it dramatic! Upload it to the MWF-2025 whatsap group.",
-                historyText: "The Hesburgh Library is one of the most iconic buildings on campus, famous for the “Word of Life” mural, which is better known by the ND community as Touchdown Jesus. It is so named because, from inside the football stadium (hint, hint!), it looks like the ball goes between Jesus’ hands when the players kick a field goal.",
-                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Hesburgh+Library", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Hesburgh+Library,+284+Hesburgh+Library,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d29f1af60a29:0x87f74f541c574744!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
-            },
-            "Notre Dame Stadium": {
-                clue: "From scholarly pursuits, to the roar of the crowd, head south to the stadium, standing proud. Where legends are born, and victories won, a hallowed ground for the Irish, second to none.",
-                task: "Take a team photo outside the main entrance of Notre Dame Stadium, showing your Irish spirit! Upload it to the MWF-2025 whatsap group.",
-                historyText: "When you say Notre Dame, most people around the world immediately think of football (American Football, that is). Notre Dame Stadium is the home field of the University of Notre Dame Fighting Irish football team. The Stadium is surrounded by 5 statues of famous Notre Dame coaches: Knute Rockne, Dan Devine, Ara Parseghian, Frank Leahy, and Lou Holtz. Find one of these statues and take a photo of a team member posing as the statue!",
-                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Notre+Dame+Stadium", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Notre+Dame+Stadium,+2010+Moose+Krause+Cir,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816cd69c5928e6d:0x76b0222fdeaa2c91!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+                map: "https://www.google.com/maps/dir//Basilica+of+the+Sacred+Heart,+101+Basilica+Dr,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816cd4762093aab:0x19056d411e749a72!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
             },
             "LaFortune Student Center": {
-                clue: "Seek a bustling hub, where students convene, for food, fun, and study, a lively scene. From coffee to shops, and places to meet, LaFortune's doors open, a campus heartbeat.",
+                clue: "From the Main Building, seek a bustling hub where students convene for food, fun, and study, a lively scene. From coffee to shops, and places to meet, LaFortune's doors open, a campus heartbeat.",
                 task: "Take a photo of your team doing something 'student-like' (e.g., studying, grabbing coffee, chatting) outside LaFortune Student Center. Upload it to the MWF-2025 whatsap group.",
                 historyText: "LaFortune Student Center, fondly abbreviated “LaFun” by students, opened in 1953 and has been the epicenter of student errands and activities with friends ever since! Its four floors are filled with study spaces, coffee shops, late night snack locations, a convenience store, and–for our purposes–meeting places. Meet inside Lafortune Student Center near the circular Welcome desk on the first floor at 10:30 AM!",
                 historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=LaFun", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Student+Center+(LaFortune),+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d2a1b46712b1:0xd150329d3746f090!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+                map: "https://www.google.com/maps/dir/41.6960492,-86.2377641/Main+Building,+Notre+Dame,+IN+46556/@41.6996301,-86.2436558,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8816d2a174b341c1:0xa08d1a8f76f77ddf!2m2!1d-86.2390726!2d41.7030267?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D" // REPLACE WITH ACTUAL LINK
             },
-            "Jenkins Nanovic Hall (Finish)": {
-                clue: "Your quest is complete, your journey's end near, to a modern new hall, banishing all fear. Global connections and studies so deep, Jenkins Nanovic awaits, secrets to keep.",
+            "Hesburgh Library ('Touchdown Jesus')": {
+                clue: "Beyond LaFortune, a colossal facade with a mosaic so grand, a spiritual parade. 'Touchdown Jesus' watches, with arms open wide, a beacon of wisdom, where knowledge resides.",
+                task: "Recreate the 'Touchdown Jesus' pose with your team in front of the Hesburgh Library mural. Make it dramatic! Upload it to the MWF-2025 whatsap group.",
+                historyText: "The Hesburgh Library is one of the most iconic buildings on campus, famous for the “Word of Life” mural, which is better known by the ND community as Touchdown Jesus. It is so named because, from inside the football stadium (hint, hint!), it looks like the ball goes between Jesus’ hands when the players kick a field goal.",
+                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Hesburgh+Library", // REPLACE WITH ACTUAL IMAGE
+                map: "https://www.google.com/maps/dir//Our+Lady+of+the+Lakes+World+Peace+Plaza,+Holy+Cross+Dr,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d3a49c1e9851:0xc756b895d3cc89f2!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+            },
+            "Notre Dame Stadium & Duncan Student Center": { // Combined name for clarity
+                clue: "From scholarly pursuits, to the roar of the crowd, head south to the stadium, standing proud. Where legends are born, and victories won, a hallowed ground for the Irish, second to none. Don't forget to explore the modern student hub attached!",
+                task: "Take a team photo outside the main entrance of Notre Dame Stadium, showing your Irish spirit! Also, try to find a unique feature of the Duncan Student Center to include. Upload it to the MWF-2025 whatsap group.",
+                historyText: "When you say Notre Dame, most people around the world immediately think of football (American Football, that is). Notre Dame Stadium is the home field of the University of Notre Dame Fighting Irish football team. The Stadium is surrounded by 5 statues of famous Notre Dame coaches: Knute Rockne, Dan Devine, Ara Parseghian, Frank Leahy, and Lou Holtz. Find one of these statues and take a photo of a team member posing as the statue! The Duncan Student Center, connected to the stadium, is a newer addition providing extensive student spaces, dining, and recreation.",
+                historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Notre+Dame+Stadium+%26+Duncan", // REPLACE WITH ACTUAL IMAGE
+                map: "https://www.google.com/maps/dir//Hesburgh+Library,+284+Hesburgh+Library,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d29f1af60a29:0x87f74f541c574744!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+            },
+            "Jenkins Nanovic Hall (Finish)": { // Renamed for clarity in route, and as the official finish
+                clue: "Your quest is complete, your journey's end near, to the modern hall where your adventure began, banishing all fear. Global connections and studies so deep, Jenkins Nanovic awaits, secrets to keep.",
                 task: "Take a final celebratory group selfie in front of the Jenkins Nanovic Hall sign. You've conquered the campus! Upload it to the MWF-2025 whatsap group.",
                 historyText: "Opened in 2017, Jenkins Nanovic Hall is a state-of-the-art building housing several departments and institutes focused on global affairs, international studies, and the social sciences. It represents Notre Dame's commitment to addressing complex global challenges.",
                 historyImage: "https://placehold.co/400x200/F0F4F8/003366?text=Jenkins+Nanovic+Hall", // REPLACE WITH ACTUAL IMAGE
-                map: "https://www.google.com/maps/dir//Stepan+Center,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816d298585c30f5:0xda3a1cba7d2ae855!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
+                map: "https://www.google.com/maps/dir//Notre+Dame+Stadium,+2010+Moose+Krause+Cir,+Notre+Dame,+IN+46556/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8816cd69c5928e6d:0x76b0222fdeaa2c91!3e0?sa=X&ved=1t:3747&ictx=111" // REPLACE WITH ACTUAL LINK
             }
         };
 
-        // Define the single route for the group (11 stops including start and finish)
-        // This route is designed to be geographically efficient, minimizing backtracking.
+        // Define the single route for the group
         const singleGroupRoute = [
-            "Pasquerilla East Hall",
-            "North Dining Hall",
-            "Main Building (Golden Dome)",
-            "Basilica of the Sacred Heart", // Inserted here
-            "Grotto of Our Lady of Lourdes",
-            "The Plaza",
+            "Jenkins Nanovic Hall (Start)",
             "Coleman-Morse Center",
+            "Grotto of Our Lady of Lourdes",
+            "Basilica of the Sacred Heart",
+            "Main Building (Golden Dome)",
             "LaFortune Student Center",
             "Hesburgh Library ('Touchdown Jesus')",
-            "Notre Dame Stadium",
+            "Notre Dame Stadium & Duncan Student Center",
             "Jenkins Nanovic Hall (Finish)"
         ];
+
 
         let currentStopIndex = 0;
         let selectedStops = singleGroupRoute; // The single group will follow this route
